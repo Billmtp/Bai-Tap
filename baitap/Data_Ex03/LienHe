@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Liên Hệ Du Lịch Việt Nam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f0f8ff;
+        }
+
+        header {
+            background-color: #009688;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        nav {
+            background-color: #00695c;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        label {
+            color: white;
+            background-color: #00796b;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        label:hover {
+            background-color: #004d40;
+        }
+
+        .content {
+            display: none;
+            padding: 20px;
+        }
+
+        #tab-contact:checked ~ #contact {
+            display: block;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #009688;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00796b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Liên Hệ Với Chúng Tôi</h1>
+    </header>
+
+    <!-- Radio cho trang liên hệ -->
+    <input type="radio" name="tab" id="tab-contact" checked>
+
+    <!-- Điều hướng đơn giản -->
+    <nav>
+        <label for="tab-contact">Liên hệ</label>
+    </nav>
+
+    <!-- Nội dung trang liên hệ -->
+    <section id="contact" class="content">
+        <h2>Gửi Thông Tin Liên Hệ</h2>
+        <p>Nếu bạn có bất kỳ câu hỏi hoặc yêu cầu nào, vui lòng điền vào biểu mẫu dưới đây:</p>
+
+        <form action="#" method="post">
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Nội dung:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Gửi</button>
+        </form>
+    </section>
+
+</body>
+</html>
