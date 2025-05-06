@@ -2,90 +2,91 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Cà phê Việt Nam</title>
+    <title>Du Lịch Việt Nam</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f2eee6;
-            color: #333;
+            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 40px 0;
+            background: #f0f8ff;
         }
-
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 30px;
-            background-color: #fffaf2;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            border: 1px solid #e0d6c6;
-        }
-
-        h1 {
+        header {
+            background-color: #009688;
+            color: white;
+            padding: 20px;
             text-align: center;
-            color: #6b4c3b;
-            margin-bottom: 20px;
         }
 
-        h2 {
-            color: #8b5c42;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 4px;
-            margin-top: 30px;
+        /* Ẩn các radio buttons */
+        input[type="radio"] {
+            display: none;
         }
 
-        p {
-            margin-top: 10px;
+        nav {
+            background-color: #00695c;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
         }
 
-        img {
-            max-width: 100%;
-            border-radius: 8px;
+        label {
+            color: white;
+            background-color: #00796b;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        label:hover {
+            background-color: #004d40;
+        }
+
+        .content {
+            display: none;
+            padding: 20px;
+        }
+
+        /* Khi radio được chọn, hiện phần nội dung tương ứng */
+        #tab-home:checked ~ #home,
+        #tab-info:checked ~ #info,
+        #tab-contact:checked ~ #contact {
             display: block;
-            margin: 15px auto;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #777;
-            font-size: 0.9em;
-            border-top: 1px solid #ddd;
-            padding-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Cà phê Việt Nam</h1>
 
-        <p>Cà phê là một phần không thể thiếu trong văn hóa của người Việt. Với hương vị đậm đà, cà phê Việt Nam nổi tiếng bởi cách pha phin truyền thống và nhiều biến tấu độc đáo như cà phê sữa đá, cà phê trứng.</p>
+    <header>
+        <h1>Khám Phá Du Lịch Việt Nam</h1>
+    </header>
 
-        <img src="https://www.cubes-asia.com/storage/blogs/2023/ca-phe-sua-da.jpg" alt="Cà phê sữa đá Việt Nam">
+    <!-- Các radio điều khiển -->
+    <input type="radio" name="tab" id="tab-home" checked>
+    <input type="radio" name="tab" id="tab-info">
+    <input type="radio" name="tab" id="tab-contact">
 
-        <h2>Những loại cà phê phổ biến</h2>
-        <ul>
-            <li>Cà phê đen đá</li>
-            <li>Cà phê sữa đá</li>
-            <li>Cà phê trứng</li>
-            <li>Bạc xỉu</li>
-        </ul>
+    <!-- Các nút chuyển -->
+    <nav>
+        <label for="tab-home">Trang chủ</label>
+        <label for="tab-info">Thông tin</label>
+        <label for="tab-contact">Liên hệ</label>
+    </nav>
 
-        <h2>Văn hóa thưởng thức</h2>
-        <p>Người Việt thường thưởng thức cà phê vào buổi sáng hoặc chiều, vừa nhâm nhi vừa trò chuyện hoặc làm việc. Quán cà phê không chỉ là nơi uống mà còn là nơi gắn kết cộng đồng.</p>
+    <!-- Nội dung -->
+    <section id="home" class="content">
+        <h2>Trang chủ</h2>
+        <p>Chào mừng bạn đến với trang web du lịch Việt Nam! Hãy cùng khám phá vẻ đẹp từ Bắc chí Nam.</p>
+    </section>
 
-        <h2>Xuất khẩu cà phê</h2>
-        <p>Việt Nam là một trong những quốc gia xuất khẩu cà phê lớn nhất thế giới, nổi bật với giống cà phê Robusta mạnh mẽ và hương vị đặc trưng.</p>
+    <section id="info" class="content">
+        <h2>Thông tin</h2>
+        <p>Việt Nam là một điểm đến nổi tiếng với thiên nhiên tuyệt đẹp, văn hóa phong phú và ẩm thực đa dạng.</p>
+    </section>
 
-        <footer>
-            &copy; 2025 Văn hóa Việt - Cà phê là tinh thần
-        </footer>
-    </div>
+    <section id="contact" class="content">
+        <h2>Liên hệ</h2>
+        <p>Email: dulichvietnam@example.com<br>SĐT: 0123 456 789</p>
+    </section>
+
 </body>
 </html>
