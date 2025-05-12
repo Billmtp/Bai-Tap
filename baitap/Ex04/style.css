@@ -4,11 +4,88 @@ body{
 
 
 /* Header **/
-header{
- 
+ .button {
+      display: inline-block;  /* Hiển thị các nút liền nhau */
+       /* Màu nền của nút */
+      color: white;           /* Màu chữ */
+      text-decoration: none;  /* Bỏ gạch chân của liên kết */
+      padding: 10px 20px;     /* Khoảng cách trong nút */
+      border-radius: 5px;     /* Bo tròn các góc */
+      font-weight: bold;      /* Chữ đậm */
+      transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền khi hover */
+      margin: 5px; 
+      /* Khoảng cách giữa các nút */
+    }
+  .khung {
+  background-color: #2b2b2b;
+  padding: 30px;
+  color: white;
+  border: 5px solid #333;
+  border-radius: 10px;
+  border-bottom: 3px solid red;
+  text-align: center;
 }
 
-footer{
-  
+/* Tiêu đề thương hiệu */
+#branding h1 {
+  margin: 0;
+  font-size: 32px;
 }
+
+.highlight {
+  color: #ff8800;
+}
+
+/* Menu dạng nút */
+.nav-buttons {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.nav-buttons .button {
+ 
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+
+
+/* Footer */
+.footer {
+  background-color: #ff8800;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+nav ul { 
+  list-style: none; /* Loại bỏ dấu chấm */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end; /* Đặt các nút ở phía bên phải */
+  gap: 15px; /* Khoảng cách giữa các nút */
+}
+
+nav ul li a { 
+  text-decoration: none; /* Bỏ gạch chân */
+  padding: 10px 20px; /* Khoảng cách trong nút */
+  /* Màu nền */
+  color: white; /* Màu chữ */
+  border-radius: 5px; /* Bo góc */
+  font-weight: bold; /* Đậm chữ */
+  transition: background-color 0.3s; /* Hiệu ứng chuyển màu khi hover */
+}
+
+nav ul li a:hover { 
+  background-color: #cc6e00; /* Màu nền khi hover */
+}
+
 
