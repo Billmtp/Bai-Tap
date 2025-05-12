@@ -1,18 +1,18 @@
-body{
-  
+/* Đảm bảo phần body được thiết lập cơ bản */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
 }
 
-
-/* Header **/
-header{
- <style> 
+/* Khung */
 .khung {
-  background-color: #2b2b2b; /* Màu nền xám đậm */
+  background-color: #2b2b2b;
   padding: 30px;
   color: white;
-  border: 5px solid #333333; /* Viền xám đậm */
-  border-radius: 10px; /* Bo tròn các góc viền */
-  border-bottom: 3px solid red; /* Viền dưới màu đỏ */
+  border: 5px solid #333333;
+  border-radius: 10px;
+  border-bottom: 3px solid red;
 }
 
 /* Footer */
@@ -25,12 +25,5 @@ header{
   position: relative;
   bottom: 0;
   width: 100%;
-  margin-top: auto;
+  margin-top: 20px;  /* Để có khoảng cách từ các phần trên */
 }
-</style>
-}
-
-footer{
-  
-}
-
