@@ -1,7 +1,4 @@
-/* Đảm bảo không có lỗi cú pháp trong body */
-body {
- 
-/* Khung */
+<style>
 .khung {
   background-color: #2b2b2b; /* Màu nền xám đậm */
   padding: 30px;
@@ -22,3 +19,6 @@ body {
   bottom: 0;
   width: 100%;
 }
+ 
+</style>
+
