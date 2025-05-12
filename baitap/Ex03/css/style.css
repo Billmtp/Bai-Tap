@@ -1,4 +1,11 @@
-<style>
+body{
+  
+}
+
+
+/* Header **/
+header{
+ <style> 
 .khung {
   background-color: #2b2b2b; /* Màu nền xám đậm */
   padding: 30px;
@@ -18,7 +25,12 @@
   position: relative;
   bottom: 0;
   width: 100%;
+  margin-top: auto;
 }
- 
 </style>
+}
+
+footer{
+  
+}
 
