@@ -1,11 +1,7 @@
+/* Đảm bảo không có lỗi cú pháp trong body */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-}
-
-/* Header */
-header {
-  width: 100%;
 }
 
 /* Khung */
@@ -14,7 +10,7 @@ header {
   padding: 30px;
   color: white;
   border: 5px solid #333333; /* Viền xám đậm */
-  border-radius: 10px;
+  border-radius: 10px; /* Bo tròn các góc viền */
   border-bottom: 3px solid red; /* Viền dưới màu đỏ */
 }
 
@@ -25,4 +21,7 @@ header {
   border: none;
   padding: 15px;
   text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
