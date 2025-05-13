@@ -1,3 +1,10 @@
+.fullsize {
+  width: 100vw;       /* Chiếm toàn bộ chiều ngang cửa sổ */
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
 .container{
   margin-left: 3cm;
 }
