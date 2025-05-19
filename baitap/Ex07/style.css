@@ -1,4 +1,4 @@
-.fullsize {
+ .fullsize {
         width: 100vw; /* Chiếm toàn bộ chiều ngang cửa sổ */
         height: auto;
         display: block;
@@ -8,6 +8,8 @@
 
       .container {
         margin-left: 3cm;
+        background-color: #2b2b2b;
+        color: white;
       }
 
       /* Header */
