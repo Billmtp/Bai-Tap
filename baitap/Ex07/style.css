@@ -1,4 +1,4 @@
- .fullsize {
+.fullsize {
         width: 100vw; /* Chiếm toàn bộ chiều ngang cửa sổ */
         height: auto;
         display: block;
@@ -131,3 +131,4 @@
 
       #newsletter button:hover {
         background-color: #cc6e00;
+      }
