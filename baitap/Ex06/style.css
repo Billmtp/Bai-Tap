@@ -3,7 +3,7 @@
   width: 100%;  /* Chiều rộng của container */
    /* Giới hạn chiều rộng tối đa */
   margin: 0 auto;  /* Căn giữa container */
-  overflow: hidden;  /* Đảm bảo không có phần tử nào tràn ra ngoài */
+  overflow: hidden;  /* Đảm bảo không có phần tử nào tràn ra ngoài */ 
 }
 
 /* Ảnh nền */
