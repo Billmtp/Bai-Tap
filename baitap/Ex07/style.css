@@ -1,3 +1,51 @@
+.image-container {
+      position: relative; /* Đặt position để các phần tử con có thể được căn chỉnh tuyệt đối */
+      width: 100%; /* Chiều rộng của container */
+      margin: 0 auto; /* Căn giữa container */
+      overflow: hidden; /* Đảm bảo không có phần tử nào tràn ra ngoài */
+    }
+
+    /* Ảnh nền */
+    .image-container img {
+      width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng container */
+      height: auto; /* Giữ tỷ lệ khung hình */
+      filter: brightness(50%); /* Giảm độ sáng của ảnh xuống 50% */
+      transition: filter 0.3s ease-in-out; /* Hiệu ứng mượt mà khi hover */
+    }
+
+    /* Lớp phủ đen */
+    .image-container::before {
+      content: ''; /* Không có nội dung */
+      position: absolute; /* Đặt lớp phủ ở vị trí tuyệt đối */
+      top: 0;
+      left: 0;
+      width: 100%; /* Lớp phủ chiếm toàn bộ chiều rộng */
+      height: 100%; /* Lớp phủ chiếm toàn bộ chiều cao */
+      background-color: rgba(0, 0, 0, 0.5); /* Nền đen với độ mờ 50% */
+      z-index: 1; /* Đảm bảo lớp phủ nằm phía trên ảnh */
+    }
+
+    /* Chữ ghi trên ảnh */
+    .overlay {
+      position: absolute;
+      top: 50%; /* Đặt phần tử ở giữa theo chiều dọc */
+      left: 50%; /* Đặt phần tử ở giữa theo chiều ngang */
+      transform: translate(-50%, -50%); /* Căn giữa chính xác */
+      color: white; /* Màu chữ trắng */
+      text-align: center; /* Căn giữa chữ */
+      font-family: Arial, sans-serif;
+      z-index: 2; /* Đảm bảo chữ nằm trên lớp phủ */
+    }
+
+    .overlay h2 {
+      font-size: 32px; /* Kích thước chữ tiêu đề */
+      margin-bottom: 10px; /* Khoảng cách giữa tiêu đề và mô tả */
+    }
+
+    .overlay p {
+      font-size: 18px;
+    }
+
 .fullsize {
         width: 100vw; /* Chiếm toàn bộ chiều ngang cửa sổ */
         height: auto;
