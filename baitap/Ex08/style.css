@@ -1,4 +1,33 @@
+#boxes .container {
+  display: flex;
+  justify-content: space-between;  /* Căn đều khoảng cách giữa các phần tử */
+  gap: 20px;  /* Khoảng cách giữa các box */
+}
+
+#boxes .box {
+  width: 30%;  /* Mỗi box chiếm 1/3 chiều rộng container */
+  text-align: center;  /* Căn giữa nội dung trong từng box */
+}
+
+#boxes .box img {
+  width: 100px;  /* Giới hạn kích thước của các logo */
+  height: auto;
+  margin-bottom: 15px;  /* Khoảng cách giữa logo và tiêu đề */
+}
+
+#boxes .box h3 {
+  font-size: 18px;  /* Kích thước chữ tiêu đề */
+  margin-bottom: 10px;  /* Khoảng cách giữa tiêu đề và đoạn mô tả */
+}
+
+#boxes .box p {
+  font-size: 14px;  /* Kích thước chữ mô tả */
+  color: #777;  /* Màu chữ của mô tả */
+  line-height: 1.6;  /* Khoảng cách giữa các dòng chữ trong mô tả */
+}
+
 .fullsize {
+        
         width: 100vw; /* Chiếm toàn bộ chiều ngang cửa sổ */
         height: auto;
         display: block;
