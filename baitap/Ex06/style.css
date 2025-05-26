@@ -1,139 +1,141 @@
 .image-container {
-  position: relative;  /* Đặt position để các phần tử con có thể được căn chỉnh tuyệt đối */
-  width: 100%;  /* Chiều rộng của container */
-   /* Giới hạn chiều rộng tối đa */
-  margin: 0 auto;  /* Căn giữa container */
-  overflow: hidden;  /* Đảm bảo không có phần tử nào tràn ra ngoài */ 
-}
+      position: relative; /* Đặt position để các phần tử con có thể được căn chỉnh tuyệt đối */
+      width: 100%; /* Chiều rộng của container */
+      margin: 0 auto; /* Căn giữa container */
+      overflow: hidden; /* Đảm bảo không có phần tử nào tràn ra ngoài */
+    }
 
-/* Ảnh nền */
-.image-container img {
-  width: 100%;  /* Đảm bảo ảnh chiếm toàn bộ chiều rộng container */
-  height: auto;  /* Giữ tỷ lệ khung hình */
-  filter: brightness(50%);  /* Giảm độ sáng của ảnh xuống 50% */
-  transition: filter 0.3s ease-in-out;  /* Hiệu ứng mượt mà khi hover */
-}
+    /* Ảnh nền */
+    .image-container img {
+      width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng container */
+      height: auto; /* Giữ tỷ lệ khung hình */
+      filter: brightness(50%); /* Giảm độ sáng của ảnh xuống 50% */
+      transition: filter 0.3s ease-in-out; /* Hiệu ứng mượt mà khi hover */
+    }
 
-/* Lớp phủ đen */
-.image-container::before {
-  content: '';  /* Không có nội dung */
-  position: absolute;  /* Đặt lớp phủ ở vị trí tuyệt đối */
-  top: 0;
-  left: 0;
-  width: 100%;  /* Lớp phủ chiếm toàn bộ chiều rộng */
-  height: 100%;  /* Lớp phủ chiếm toàn bộ chiều cao */
-  background-color: rgba(0, 0, 0, 0.5);  /* Nền đen với độ mờ 50% */
-  z-index: 1;  /* Đảm bảo lớp phủ nằm phía trên ảnh */
-}
+    /* Lớp phủ đen */
+    .image-container::before {
+      content: ''; /* Không có nội dung */
+      position: absolute; /* Đặt lớp phủ ở vị trí tuyệt đối */
+      top: 0;
+      left: 0;
+      width: 100%; /* Lớp phủ chiếm toàn bộ chiều rộng */
+      height: 100%; /* Lớp phủ chiếm toàn bộ chiều cao */
+      background-color: rgba(0, 0, 0, 0.5); /* Nền đen với độ mờ 50% */
+      z-index: 1; /* Đảm bảo lớp phủ nằm phía trên ảnh */
+    }
 
-/* Chữ ghi trên ảnh */
-.overlay {
-  position: absolute;
-  top: 50%;  /* Đặt phần tử ở giữa theo chiều dọc */
-  left: 50%;  /* Đặt phần tử ở giữa theo chiều ngang */
-  transform: translate(-50%, -50%);  /* Căn giữa chính xác */
-  color: white;  /* Màu chữ trắng */
-  text-align: center;  /* Căn giữa chữ */
-  font-family: Arial, sans-serif;
-  z-index: 2;  /* Đảm bảo chữ nằm trên lớp phủ */
-}
+    /* Chữ ghi trên ảnh */
+    .overlay {
+      position: absolute;
+      top: 50%; /* Đặt phần tử ở giữa theo chiều dọc */
+      left: 50%; /* Đặt phần tử ở giữa theo chiều ngang */
+      transform: translate(-50%, -50%); /* Căn giữa chính xác */
+      color: white; /* Màu chữ trắng */
+      text-align: center; /* Căn giữa chữ */
+      font-family: Arial, sans-serif;
+      z-index: 2; /* Đảm bảo chữ nằm trên lớp phủ */
+    }
 
-.overlay h2 {
-  font-size: 32px;  /* Kích thước chữ tiêu đề */
-  margin-bottom: 10px;  /* Khoảng cách giữa tiêu đề và mô tả */
-}
+    .overlay h2 {
+      font-size: 32px; /* Kích thước chữ tiêu đề */
+      margin-bottom: 10px; /* Khoảng cách giữa tiêu đề và mô tả */
+    }
 
-.overlay p {
-  .fullsize {
-  width: 100vw;       /* Chiếm toàn bộ chiều ngang cửa sổ */
-  height: auto;
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-.container{
-  margin-left: 3cm;
-}
+    .overlay p {
+      font-size: 18px;
+    }
 
-/\* Header \**/
-.button {
-display: inline-block;  /* Hiển thị các nút liền nhau */
-/* Màu nền của nút */
-color: white;           /* Màu chữ */
-text-decoration: none;  /* Bỏ gạch chân của liên kết */
-padding: 10px 20px;     /* Khoảng cách trong nút */
-border-radius: 5px;     /* Bo tròn các góc */
-font-weight: bold;      /* Chữ đậm */
-transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền khi hover */
-margin: 5px;
-/* Khoảng cách giữa các nút \*/
-}
-.khung {
-background-color: #2b2b2b;
-padding: 30px;
-color: white;
-border: 5px solid #333;
-border-radius: 10px;
-border-bottom: 3px solid red;
-text-align: center;
-}
+    /* Thêm các kiểu dáng khác cho các phần tử */
+    .fullsize {
+      width: 100vw; /* Chiếm toàn bộ chiều ngang cửa sổ */
+      height: auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
 
-/\* Tiêu đề thương hiệu \*/
-\#branding h1 {
-margin: 0;
-font-size: 32px;
-}
+    .container {
+      margin-left: 3cm;
+    }
 
-.highlight {
-color: #ff8800;
-}
+    /* Header */
+    .button {
+      display: inline-block; /* Hiển thị các nút liền nhau */
+      color: white; /* Màu chữ */
+      text-decoration: none; /* Bỏ gạch chân của liên kết */
+      padding: 10px 20px; /* Khoảng cách trong nút */
+      border-radius: 5px; /* Bo tròn các góc */
+      font-weight: bold; /* Chữ đậm */
+      transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền khi hover */
+      margin: 5px; /* Khoảng cách giữa các nút */
+    }
 
-/\* Menu dạng nút \*/
-.nav-buttons {
-list-style: none;
-padding: 0;
-margin-top: 20px;
-display: flex;
-justify-content: center;
-gap: 15px;
-}
+    .khung {
+      background-color: #2b2b2b;
+      padding: 30px;
+      color: white;
+      border: 5px solid #333;
+      border-radius: 10px;
+      border-bottom: 3px solid red;
+      text-align: center;
+    }
 
-.nav-buttons .button {
+    /* Tiêu đề thương hiệu */
+    #branding h1 {
+      margin: 0;
+      font-size: 32px;
+    }
 
-color: white;
-text-decoration: none;
-padding: 10px 20px;
-border-radius: 5px;
-font-weight: bold;
-transition: background-color 0.3s;
-}
+    .highlight {
+      color: #ff8800;
+    }
 
-/\* Footer */
-.footer {
-background-color: #ff8800;
-color: white;
-padding: 15px;
-text-align: center;
-}
-nav ul {
-list-style: none; /* Loại bỏ dấu chấm */
-padding: 0;
-margin: 0;
-display: flex;
-justify-content: flex-end; /* Đặt các nút ở phía bên phải */
-gap: 15px; /* Khoảng cách giữa các nút \*/
-}
+    /* Menu dạng nút */
+    .nav-buttons {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
 
-nav ul li a {
-text-decoration: none; /\* Bỏ gạch chân */
-padding: 10px 20px; /* Khoảng cách trong nút */
-/* Màu nền */
-color: white; /* Màu chữ */
-border-radius: 5px; /* Bo góc */
-font-weight: bold; /* Đậm chữ */
-transition: background-color 0.3s; /* Hiệu ứng chuyển màu khi hover \*/
-}
+    .nav-buttons .button {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
 
-nav ul li a\:hover {
-background-color: #cc6e00; /\* Màu nền khi hover \*/
-}
+    /* Footer */
+    .footer {
+      background-color: #ff8800;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: flex-end; /* Đặt các nút ở phía bên phải */
+      gap: 15px; /* Khoảng cách giữa các nút */
+    }
+
+    nav ul li a {
+      text-decoration: none; /* Bỏ gạch chân */
+      padding: 10px 20px; /* Khoảng cách trong nút */
+      color: white; /* Màu chữ */
+      border-radius: 5px; /* Bo góc */
+      font-weight: bold; /* Đậm chữ */
+      transition: background-color 0.3s; /* Hiệu ứng chuyển màu khi hover */
+    }
+
+    nav ul li a:hover {
+      background-color: #cc6e00; /* Màu nền khi hover */
+    }
