@@ -1,155 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Thiet ke web chuyen nghiep" />
+    <meta name="keywords" content="web design, professional web design, thiet ke web, thiet ke web chuyen nghiep" />
+    <meta name="author" content="Ngoc Minh" />
+    <title>Lê Trần Thạnh Design | Thông tin</title>
     <style>
-      /* --- CSS bạn gửi trước đó (giữ nguyên) --- */
-      .image-container {
-        position: relative;  
-        width: 100%;
-        margin: 0 auto;
-        overflow: hidden;
-      }
-  
-      .image-container img {
-        width: 100%;
-        height: auto;
-        filter: brightness(50%);
-        transition: filter 0.3s ease-in-out;
-      }
-
-      .image-container::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1;
-      }
-
-      .overlay {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        text-align: center;
-        font-family: Arial, sans-serif;
-        z-index: 2;
-      }
-
-      .overlay h2 {
-        font-size: 32px;
-        margin-bottom: 10px;
-      }
-
-      .overlay p {
-        font-size: 18px;
-      }
-
-      #boxes .container {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-      }
-
-      #boxes .box {
-        width: 30%;
-        text-align: center;
-      }
-
-      #boxes .box img {
-        width: 100px;
-        height: auto;
-        margin-bottom: 15px;
-      }
-
-      #boxes .box h3 {
-        font-size: 18px;
-        margin-bottom: 10px;
-      }
-
-      #boxes .box p {
-        font-size: 14px;
-        color: #777;
-        line-height: 1.6;
-      }
-
-      .fullsize {
-        width: 100vw;
-        height: auto;
-        display: block;
+      body, html {
         margin: 0;
         padding: 0;
+        height: 100%;
+        background: white;
+        font-family: Arial, sans-serif;
       }
 
-      .container2 {
-        margin-left: 3cm;
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: rgba(0, 0, 0, 0.25);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .phone-frame {
+        position: relative;
+        width: 375px;
+        height: 667px;
+        margin: 40px auto;
         background-color: #2b2b2b;
         color: white;
-        margin-right: 3cm;
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
+        overflow-y: auto;
+        border-radius: 20px;
+        box-sizing: border-box;
+        padding: 20px;
+        z-index: 10;
       }
 
-      .container {
-        margin-left: 3cm;
+      .phone-frame::-webkit-scrollbar {
+        width: 6px;
       }
-
-      .button {
-        display: inline-block;
-        color: white;
-        text-decoration: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: background-color 0.3s;
-        margin: 5px;
+      .phone-frame::-webkit-scrollbar-thumb {
+        background-color: #555;
+        border-radius: 3px;
       }
 
       .khung {
         background-color: #2b2b2b;
         padding: 30px;
         color: white;
-        border: 5px solid #333;
+        border: none;
         border-radius: 10px;
         border-bottom: 3px solid red;
-        text-align: center;
-      }
-
-      #branding h1 {
-        margin: 0;
-        font-size: 32px;
-      }
-
-      .highlight {
-        color: #ff8800;
-      }
-
-      .nav-buttons {
-        list-style: none;
-        padding: 0;
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .nav-buttons .button {
-        color: white;
-        text-decoration: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: background-color 0.3s;
-      }
-
-      .footer {
-        background-color: #ff8800;
-        color: white;
-        padding: 15px;
         text-align: center;
       }
 
@@ -186,7 +90,7 @@
         align-items: center;
       }
 
-      #newsletter .container {
+      #newsletter .container2 {
         max-width: 300px;
         margin-left: auto;
         display: flex;
@@ -216,184 +120,106 @@
         background-color: #cc6e00;
       }
 
-      /* Phần cấu trúc song song cho "Về chúng tôi" và "Dịch vụ chúng tôi" */
       #main {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-      }
-
-      /* Phần "Về chúng tôi" */
-      .about-us-container {
-        width: 48%;
-        padding: 20px;
-        background-color: #f5f5f5; /* Màu nền sáng */
-        border-radius: 10px;
-        box-sizing: border-box;
-      }
-
-      /* Phần "Dịch vụ chúng tôi" */
-      #services {
-        width: 48%;
-        padding: 20px;
-        background-color: #2b2b2b; /* Màu nền đen cho phần này */
-        color: white; /* Chữ màu trắng */
-        border-radius: 10px;
-        box-sizing: border-box;
-      }
-
-      /* Căn chỉnh tiêu đề "Dịch vụ chúng tôi" */
-      #services h3 {
         margin-top: 20px;
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 10px;
+        color: #333;
+      }
+
+      #main h1.page-title {
         font-size: 24px;
+        margin-bottom: 15px;
+        color: black;
+      }
+
+      #main p {
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      #services {
+        margin-top: 20px;
+        background-color: #2b2b2b;
+        color: white;
+        border-radius: 10px;
+        padding: 20px;
         text-align: center;
       }
 
-      .about-us-container h1 {
+      #services h3 {
         font-size: 24px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
       }
 
-      /* Các phần "Về chúng tôi" và "Dịch vụ chúng tôi" được căn giữa */
-      .about-us-container p,
       #services p {
         font-size: 18px;
         line-height: 1.6;
       }
 
-      /* --- Bắt đầu phần style khung điện thoại giả lập và box logo cố định dưới --- */
-
-      /* Khung giả lập điện thoại */
-      .phone-frame {
-        width: 375px;
-        height: 667px;
-        background-color: #2b2b2b;
-        border: 6px solid #444;
-        border-radius: 40px;
-        box-shadow: 0 0 30px rgba(255, 136, 0, 0.7);
-        overflow-y: auto;  /* thanh cuộn dọc trong khung */
-        padding: 20px;
-        box-sizing: border-box;
-        position: relative;
-        margin: 20px auto;
+      .footer {
+        background-color: #ff8800;
         color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Để 3 box nằm dưới */
-      }
-
-      /* Phần nội dung chính phía trên (nội dung trang) */
-      .phone-frame .content {
-        flex: 1;  /* chiếm hết không gian trên */
-        overflow-y: auto;
-        padding-bottom: 20px;
-      }
-
-      /* Phần 3 box logo nằm dưới cố định trong khung, căn giữa theo chiều dọc */
-      .phone-frame #boxes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding: 10px 0;
-        border-top: 1px solid #444;
-        background-color: #222;
-        border-radius: 10px 10px 0 0;
-      }
-
-      /* Box con (logo + text) */
-      .phone-frame #boxes .box {
-        width: 80%;
+        padding: 15px;
         text-align: center;
-        color: white;
+        margin-top: 30px;
+        border-radius: 10px;
       }
 
-      .phone-frame #boxes .box img {
-        width: 60px;  /* thu nhỏ logo vừa phải */
-        margin-bottom: 8px;
+      #branding h1 {
+        margin: 0;
+        font-size: 32px;
+      }
+
+      .highlight {
+        color: #ff8800;
       }
     </style>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Thiet ke web chuyen nghiep" />
-    <meta name="keywords" content="web design, professional web design, thiet ke web, thiet ke web chuyen nghiep" />
-    <meta name="author" content="Ngoc Minh" />
-    <title>Lê Trần Thạnh Design | Thông tin</title>
   </head>
   <body>
     <div class="phone-frame">
-      <div class="content">
-        <header>
-          <div class="khung">
-            <div id="branding">
-              <h1><span class="highlight">Trần Thạnh</span> Web Design</h1>
-            </div>
-            <nav>
-              <ul>
-                <li><a href="trangchu.html" class="button">Trang chủ</a></li>
-                <li class="current"><a href="thongtin.html" class="button">Thông tin</a></li>
-                <li><a href="dichvu.html" class="button">Dịch vụ</a></li>
-              </ul>
-            </nav>
+      <header>
+        <div class="khung">
+          <div id="branding">
+            <h1><span class="highlight">Trần Thạnh</span> Web Design</h1>
           </div>
-        </header>
-
-        <section id="newsletter">
-          <div class="container2">
-            <h1>Đăng ký để nhận thông báo mới từ chúng tôi</h1>
-            <form>
-              <input type="email" placeholder="Nhập Email..." />
-              <button type="submit" class="button_1">Đăng ký</button>
-            </form>
-          </div>
-        </section>
-
-        <!-- Phần "Về chúng tôi" nằm ngoài khung đen -->
-        <section id="main">
-          <div class="about-us-container">
-            <h1 class="page-title">Về chúng tôi</h1>
-            <p>
-              Chúng tôi luôn lắng nghe nhu cầu, tạo ra những ý tưởng đột phá mới giúp hơn 2.300 khách hàng thành công.
-            </p>
-            <p class="dark">
-              Về sáng tạo, chúng tôi có hơn 10 năm kinh nghiệm xây dựng chiến lược web cho công ty,
-              thương mại điện tử và tập đoàn. Về công nghệ, chúng tôi phát triển những trang web vượt
-              trội, giải pháp e-commercial, quảng cáo web, dịch vụ web…
-            </p>
-          </div>
-
-          <!-- Phần "Dịch vụ chúng tôi" nằm trong khung đen -->
-          <div id="services">
-            <h3>Dịch vụ chúng tôi</h3>
-            <p>Chúng tôi cam kết cung cấp dịch vụ tin cậy, chuyên nghiệp, phải chăng.</p>
-          </div>
-        </section>
-      </div>
-
-      <div id="boxes">
-        <div class="box">
-          <img src="html-logo.png" alt="HTML Logo" />
-          <h3>HTML</h3>
-          <p>Mô tả về HTML</p>
+          <nav>
+            <ul>
+              <li><a href="trangchu.html" class="button">Trang chủ</a></li>
+              <li class="current"><a href="thongtin.html" class="button">Thông tin</a></li>
+              <li><a href="dichvu.html" class="button">Dịch vụ</a></li>
+            </ul>
+          </nav>
         </div>
-        <div class="box">
-          <img src="css-logo.png" alt="CSS Logo" />
-          <h3>CSS</h3>
-          <p>Mô tả về CSS</p>
+      </header>
+
+      <section id="newsletter">
+        <div class="container2">
+          <h1>Đăng ký để nhận thông báo mới từ chúng tôi</h1>
+          <form>
+            <input type="email" placeholder="Nhập Email..." />
+            <button type="submit" class="button_1">Đăng ký</button>
+          </form>
         </div>
-        <div class="box">
-          <img src="graphic-logo.png" alt="Graphic Design Logo" />
-          <h3>Graphic Design</h3>
-          <p>Mô tả về thiết kế đồ họa</p>
-        </div>
-      </div>
+      </section>
+
+      <section id="main">
+        <h1 class="page-title">Về chúng tôi</h1>
+        <p>Chúng tôi luôn lắng nghe nhu cầu, tạo ra những ý tưởng đột phá mới giúp hơn 2.300 khách hàng thành công.</p>
+        <p>
+          Về sáng tạo, chúng tôi có hơn 10 năm kinh nghiệm xây dựng chiến lược web cho công ty, thương mại điện tử và tập đoàn. Về công nghệ, chúng tôi phát triển những trang web vượt trội, giải pháp e-commercial, quảng cáo web, dịch vụ web…
+        </p>
+      </section>
+
+      <section id="services">
+        <h3>Dịch vụ chúng tôi</h3>
+        <p>Chúng tôi cam kết cung cấp dịch vụ tin cậy, chuyên nghiệp, phải chăng.</p>
+      </section>
+
+      <footer class="footer">
+        <p>Lê Trần Thạnh Design, Copyright &copy; 2022</p>
+      </footer>
     </div>
-
-    <footer class="footer">
-      <p>Lê Trần Thạnh Design, Copyright &copy; 2022</p>
-    </footer>
   </body>
 </html>
